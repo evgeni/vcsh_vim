@@ -28,3 +28,6 @@ let g:airline_theme='solarized'
 let g:gitgutter_sign_column_always = 1
 " quicker updates
 set updatetime=500
+
+" no need to do syntax checks on exit
+let g:syntastic_check_on_wq = 0
