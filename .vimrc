@@ -15,6 +15,8 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
+" requires https://github.com/powerline/powerline/pull/1765 when using
+" terminus in xfce4-terminal
 let g:airline_powerline_fonts = 1
 
 " better collors
