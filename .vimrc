@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
@@ -33,3 +34,9 @@ set updatetime=500
 
 " no need to do syntax checks on exit
 let g:syntastic_check_on_wq = 0
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
