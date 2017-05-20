@@ -15,6 +15,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
@@ -40,3 +41,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Don't do editorconfig for fugituve
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
