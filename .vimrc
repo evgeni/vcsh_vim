@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
@@ -44,3 +45,7 @@ nmap ga <Plug>(EasyAlign)
 
 " Don't do editorconfig for fugituve
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
