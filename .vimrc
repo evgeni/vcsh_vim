@@ -30,7 +30,7 @@ set background=dark
 let g:airline_theme='solarized'
 
 " always show gitgutter column, so it does not jump
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 " quicker updates
 set updatetime=500
 
