@@ -23,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
@@ -55,3 +56,5 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
