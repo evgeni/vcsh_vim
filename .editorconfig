@@ -13,12 +13,12 @@ indent_size = 2
 trim_trailing_whitespace = true
 
 # 4 space indentation
-[*.py]
+[**/*.py]
 indent_style = space
 indent_size = 4
 
 # Tab indentation
-[{Makefile,**/debian/rules}]
+[{**/Makefile,**/rules,**/*.mk}]
 indent_style = tab
 indent_size = 4
 
