@@ -28,6 +28,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nathangrigg/vim-beancount'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
