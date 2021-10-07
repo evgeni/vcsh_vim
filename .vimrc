@@ -37,8 +37,8 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 
 " better collors
-colorscheme solarized
 set background=dark
+colorscheme solarized
 let g:airline_theme='solarized'
 
 " always show gitgutter column, so it does not jump
