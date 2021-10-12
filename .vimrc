@@ -36,6 +36,14 @@ call plug#end()
 " terminus in xfce4-terminal
 let g:airline_powerline_fonts = 1
 
+" update colnr symbol, as it is broken with powerline fonts
+" see https://github.com/vim-airline/vim-airline/issues/2381
+" and no, I don't know why I need to define it first
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = "\u33c7"
+
 " better collors
 set background=dark
 colorscheme solarized
