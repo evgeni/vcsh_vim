@@ -7,6 +7,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let g:polyglot_disabled = ['pascal', 'puppet']
+
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
