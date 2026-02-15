@@ -29,6 +29,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'sirtaj/vim-openscad'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -76,25 +77,4 @@ autocmd FileType markdown setlocal spell
 
 autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 
-" https://www.reddit.com/r/vim/comments/slkfy0/adding_custom_handlers_for_gbrowse_command/
-function! YourCustomHandler(opts)
-    " return if it there's no gitlab substring in remote
-    if a:opts.remote !~? 'gitlab'
-        return
-    endif
-
-    let op = a:opts
-    " Convert data from opts variable into a valid link
-
-    " Remove protocol of remote (ssh://, http://, https://)
-    let s:remote = substitute(a:opts.remote, '^.*//', '', '')
-    " Remove git@ and replace : with / of remote (in case protocol was ssh)
-    let s:remote = substitute(s:remote, 'git@', '', '')
-    let s:remote = substitute(s:remote, ':', '\/', '')
-    " Remove .git postfix from remote
-    let s:remote = substitute(s:remote, '\.git$', '', '')
-    return 'https://'. s:remote .'/blob/'. op.commit .'/'. op.path .'#L'. op.line1 .'-L'. op.line2
-endfunction
-
-let s:handlers = get(g:, 'fugitive_browse_handlers', [])
-let g:fugitive_browse_handlers = add(s:handlers, 'YourCustomHandler')
+let g:fugitive_gitlab_domains = ['https://gitlab.cee.redhat.com']
