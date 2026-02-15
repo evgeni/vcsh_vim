@@ -1,3 +1,6 @@
+" This vimrc depends on tools being available on the system
+" junegunn/fzf.vim needs
+"   - fzf bat ripgrep
 set nocompatible
 set mouse=
 
@@ -18,12 +21,13 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'chrisbra/matchit'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-slash'
 Plug 'luochen1990/rainbow'
 Plug 'matcatc/vim-asciidoc-folding'
-Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nathangrigg/vim-beancount'
 Plug 'rodjek/vim-puppet'
@@ -67,10 +71,6 @@ nmap ga <Plug>(EasyAlign)
 
 " Don't do editorconfig for fugituve
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
