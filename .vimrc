@@ -1,6 +1,10 @@
 " This vimrc depends on tools being available on the system
-" junegunn/fzf.vim needs
-"   - fzf bat ripgrep
+" junegunn/fzf.vim:
+"   - fzf
+"   - bat
+"   - ripgrep
+" dense-analysis/ale:
+"   - pylsp (python3-lsp-server)
 set nocompatible
 set mouse=
 
@@ -19,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chaoren/vim-wordmotion'
 Plug 'chrisbra/matchit'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -41,7 +46,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " install fonts-powerline on Debian or powerline-fonts on Fedora
@@ -78,3 +82,7 @@ autocmd FileType markdown setlocal spell
 autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 
 let g:fugitive_gitlab_domains = ['https://gitlab.cee.redhat.com', 'https://salsa.debian.org']
+
+let g:ale_linters={ 'python': ['pylsp'], }
+
+let g:ycm_autoclose_preview_window_after_completion = 1
