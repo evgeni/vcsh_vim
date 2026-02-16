@@ -77,4 +77,4 @@ autocmd FileType markdown setlocal spell
 
 autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 
-let g:fugitive_gitlab_domains = ['https://gitlab.cee.redhat.com']
+let g:fugitive_gitlab_domains = ['https://gitlab.cee.redhat.com', 'https://salsa.debian.org']
