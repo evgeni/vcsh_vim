@@ -20,7 +20,6 @@ let g:polyglot_disabled = ['pascal', 'puppet']
 
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chaoren/vim-wordmotion'
@@ -38,7 +37,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nathangrigg/vim-beancount'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'sirtaj/vim-openscad'
