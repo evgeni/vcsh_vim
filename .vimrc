@@ -5,6 +5,8 @@
 "   - ripgrep
 " dense-analysis/ale:
 "   - pylsp (python3-lsp-server)
+"   - ruff
+"   - rubocop
 set nocompatible
 set mouse=
 
@@ -87,5 +89,6 @@ autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 let g:fugitive_gitlab_domains = ['https://gitlab.cee.redhat.com', 'https://salsa.debian.org']
 
 let g:ale_linters={ 'python': ['pylsp'], }
+let g:ale_fixers={ 'python': ['ruff'], 'ruby': ['rubocop'] }
 
 let g:ycm_autoclose_preview_window_after_completion = 1
