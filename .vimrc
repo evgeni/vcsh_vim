@@ -53,6 +53,9 @@ call plug#end()
 " terminus in xfce4-terminal
 let g:airline_powerline_fonts = 1
 
+" enable the tabline
+let g:airline#extensions#tabline#enabled = 1
+
 " better collors
 set background=dark
 colorscheme solarized
