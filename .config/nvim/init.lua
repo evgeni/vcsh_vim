@@ -6,6 +6,13 @@ Plug('frankier/neovim-colors-solarized-truecolor-only')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 
+Plug('rodjek/vim-puppet')
+
+Plug('tpope/vim-fugitive')
+Plug('tpope/vim-rhubarb')
+Plug('shumphrey/fugitive-gitlab.vim')
+Plug('airblade/vim-gitgutter')
+
 Plug('neovim/nvim-lspconfig')
 
 Plug('nvim-lua/plenary.nvim')
@@ -28,7 +35,7 @@ vim.g['airline#extensions#tabline#enabled'] = 1
 
 vim.cmd('silent! colorscheme solarized')
 
-vim.g.airline_theme='solarized'
+vim.g.airline_theme='base16_solarized_dark'
 
 vim.opt.signcolumn='yes'
 
@@ -84,8 +91,29 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-vim.lsp.config('pylsp', {
-  capabilities = capabilities
+local lsps = {'pylsp', 'rubocop'}
+for i, lsp in ipairs(lsps) do
+  vim.lsp.config(lsp, {
+    capabilities = capabilities
+  })
+  vim.lsp.enable(lsp)
+end
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    local bufmap = function(mode, rhs, lhs)
+      vim.keymap.set(mode, rhs, lhs, {buffer = event.buf})
+    end
+
+    bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+    bufmap('n', 'grt', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+    bufmap('n', 'grd', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    bufmap({'n', 'x'}, 'gq', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
+  end,
 })
 
-vim.lsp.enable('pylsp')
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
+vim.g.fugitive_gitlab_domains = {'https://gitlab.cee.redhat.com', 'https://salsa.debian.org'}
