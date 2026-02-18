@@ -91,13 +91,8 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lsps = {'pylsp', 'rubocop'}
-for i, lsp in ipairs(lsps) do
-  vim.lsp.config(lsp, {
-    capabilities = capabilities
-  })
-  vim.lsp.enable(lsp)
-end
+vim.lsp.config('*', { capabilities = capabilities } )
+vim.lsp.enable({'pylsp', 'rubocop'})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
