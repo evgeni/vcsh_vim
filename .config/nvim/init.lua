@@ -26,6 +26,8 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/cmp-path')
 Plug('petertriho/cmp-git')
 Plug('hrsh7th/nvim-cmp')
+
+Plug('nvim-telescope/telescope.nvim')
 vim.call('plug#end')
 
 --[[
