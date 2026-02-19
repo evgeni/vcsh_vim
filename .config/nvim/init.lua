@@ -1,12 +1,15 @@
 local vim = vim
 local Plug = vim.fn['plug#']
 
+vim.g.polyglot_disabled = { 'pascal', 'puppet' }
+
 vim.call('plug#begin')
 Plug('frankier/neovim-colors-solarized-truecolor-only')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 
 Plug('rodjek/vim-puppet')
+Plug('sheerun/vim-polyglot')
 
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-rhubarb')
