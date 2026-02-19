@@ -4,7 +4,7 @@ local Plug = vim.fn['plug#']
 vim.g.polyglot_disabled = { 'pascal', 'puppet' }
 
 vim.call('plug#begin')
-Plug('frankier/neovim-colors-solarized-truecolor-only')
+Plug('maxmx03/solarized.nvim')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 
@@ -40,7 +40,7 @@ vim.g['airline#extensions#tabline#enabled'] = 1
 
 vim.cmd('silent! colorscheme solarized')
 
-vim.g.airline_theme='base16_solarized_dark'
+vim.g.airline_theme='solarized'
 
 vim.opt.signcolumn='yes'
 
