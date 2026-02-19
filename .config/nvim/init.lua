@@ -110,7 +110,7 @@ vim.lsp.config('pylsp', {
   }
 })
 
-vim.lsp.enable({'pylsp', 'rubocop', 'ruby_lsp'})
+vim.lsp.enable({'pylsp', 'rubocop', 'ruby_lsp', 'ansiblels'})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
