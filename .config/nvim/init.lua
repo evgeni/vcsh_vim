@@ -129,3 +129,5 @@ vim.diagnostic.config({
 })
 
 vim.g.fugitive_gitlab_domains = {'https://gitlab.cee.redhat.com', 'https://salsa.debian.org'}
+
+vim.opt.mouse = ''
